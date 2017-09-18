@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Curso de Vue js</title>
+</head>
+<body>
+	<div id="app">
+		Hole, {{ nombre }}
+		<a v-bind:href="url">{{ pagina }}</a>
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script>
+		let app = new Vue({
+			el: '#app',
+			data: {
+				nombre: 'Saul',
+				url: 'https://google.com',
+				pagina: 'Ir a Google'
+			}
+		});
+	</script>
+</body>
+</html>
