@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
-	<title>Curso de Vue js</title>
+  	<title>Curso Vue.js</title>
 </head>
 <body>
-	<div id="app">
-		Hole, {{ nombre }}
-		<a v-bind:href="url">{{ pagina }}</a>
-	</div>
+    <div id="app">
+	    <div v-show="mostrar">
+		    <h1>Este es mi título</h1>
+		    <h2>Este es mi subtítulo</h2>
+		    <a :href="url" target="_blank">Ir a {{ pagina }}</a>
+	    </div>
+		<div v-show="!mostrar">
+		   Esto está oculto
+		</div>
+    </div>
 
 	<script src="https://unpkg.com/vue"></script>
-	<script>
+	<script type="text/javascript">
 		let app = new Vue({
-			el: '#app',
-			data: {
-				nombre: 'Saul',
-				url: 'https://google.com',
-				pagina: 'Ir a Google'
-			}
-		});
+		  el: '#app',
+		  data: {
+			url: 'https://google.com',
+			pagina: 'Google',
+			mostrar: true
+		  }
+		})
 	</script>
 </body>
 </html>
